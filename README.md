@@ -1,21 +1,18 @@
-# THE ROLE OF TELENCEPHALON SIZE IN COGNITION IN THE GUPPY _(Poecilia reticulata)_
+# APPROACHES FOR TRACKING SHOALING BEHAVIOUR
 
-Data analysis of my Master thesis project, done at Stockholm University  during Autumn 2019 - Autumn 2020.
-Statistical analyses of five different cognitive test:
- - problem-solving
- - reversal learning
- - spatial learning
- - short-term memory
- - long-term memory
+Data analysis during an internship at Ampatzis Lab, Karolinska Institute during August 2019 - October 2019.
+This repository contains different approaches for analyzing the data we collected.
 
-All analyses were performed with software R (v.3.6.1)
+Shoaling behaviour presents a great challenge when analyzing the data. In this case we were 
+interested understanding the role of the cerebellum in social behaviour, specifically in shoaling in zebrafish. 
+For that we tested seven individuals in an open-field test from two different groups, the control and transgenic fishes. 
+The transgenic lines presented damages in the Purkinge cells, since encodes Botulinum toxin (BoTx) in all 
+Purkinje cells (Tg(aldoca:BoTx-GFP)). 
 
-## ABSTRACT
-
-The dramatic expansion of telencephalon in large-brained species has caused great attention as the neural substrate of cognitive evolution. Previously, lesion studies have linked the telencephalon with highly demanding behaviours, and comparative studies have associated telencephalon size or telencephalon structures with cognitive abilities. While there is a great number of studies using comparative and lesion approaches examining this matter, both practices have limitations. Thus, here I used artificially selected female guppies for relative telencephalon size to experimentally test the evolutionary effect of telencephalon size on cognition. The females were tested for three different experiments, problem-solving in a detour-task, colour-cued reversal learning and spatial learning. The effect of relative telencephalon size was only detected for problem-solving and spatial learning, suggesting a lesser involvement of the telencephalon in cued reversal learning tasks. Unexpectedly, fish with smaller telencephalon out-performed fish with larger telencephalon for all the significant differences found. Possible explanations for these findings are discussed. This study implies a more complex relationship between telencephalon size variation and cognitive abilities than previously suggested. Future experiments should focus on fine-scale structural differences with holistic approaches of the brain to fully understand the differences in cognitive abilities between the telencephalon selection lines.
+The data analysis were run in **Matlab**
 
 ## Laboratory
-Zoology department, Stockholm University, Sweden.
+Department of Neuroscience, Karolinska Institute, Sweden.
 
 ## PROTOCOL
 
@@ -25,7 +22,7 @@ Seven fish from the same treatment, i.e. control or BoTx were tested. The tank h
 The fishes were filmed from above for 10 minutes (equal to 14400 frames). The video was trimmed from the frame when 
 fish all start moving (not freezing) up to 5 minutes.
 
-###ImageJ
+### ImageJ
 VIDEO TRIMMING
 
  - Trime to 5 min (from minute 1 to minute 6) 
@@ -36,7 +33,7 @@ VIDEO TRIMMING
 
 VIDEO PREPARATION
 
-Firstly, is necessary to remove the background. For it I added the following code in _ImageJ_  to create a macro.
+Firstly, is necessary to remove the background. For it I added the following code in *ImageJ*  to create a macro.
 
 In ImageJ, click on:
 
@@ -71,15 +68,15 @@ Analyze--> Analyze particles. Put between 10-100 the size of the blobs, to show 
 ```
 This procedure gave as an input a matrix of coordinates, I transferred them to excell (copy-paste). 
 
-###Excell
+### Excell
 In the excell file I removed all collumns but the name of the frame and x and y coordinates. 
 Then I putted the column of the label with just the number of seconds by using replace (thing you want to replace) and nothing. 
 Last but not least I changed the . into a ,
 
-Afterwards, I uploaded them in _Matlab_ as column vectors. 
+Afterwards, I uploaded them in **Matlab** as column vectors. 
 I called: the second of the frame, g; x coordinate, x and y coordinate, y. 
 Afterwards I opened the document Distances.m and run it. 
-You will have your data in the Summary matrix. (and in mean row and median row).
+You will have your data in the Summary matrix (with a mean row and a median row).
 
 
 For extra help in how to remove the background in ImageJ please check:
